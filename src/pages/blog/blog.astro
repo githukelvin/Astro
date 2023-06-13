@@ -1,0 +1,15 @@
+--- 
+let posts =await Astro.glob('../posts/*.md');
+--- 
+    <html>
+        <h1>Markdown links</h1>
+
+        {
+            posts.map((post) => (
+                <h3>
+                    <a href={post.url}>{post.frontmatter.title}</a>
+                </h3>
+            ))
+        }
+    </html>
+</astro>
